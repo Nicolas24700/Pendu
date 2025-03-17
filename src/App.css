@@ -1,0 +1,130 @@
+body {
+  background-color: rgb(4, 4, 4);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.app {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.pendu {
+  margin: 20px;
+}
+h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.pendu-graphic img {
+  width: 7.5rem;
+  transform: scaleX(-1);
+}
+
+.letters button {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background-color: black;
+  font-weight: bold;
+  width: 40px;
+}
+
+.word {
+  font-size: 1.5rem;
+  margin: 20px;
+  color: white;
+}
+
+.letter {
+  margin: 0 5px;
+}
+
+.win {
+  color: green;
+  margin: 20px;
+  font-size: 1.5rem;
+}
+.gameOver{
+  color: red;
+  font-size: 1.5rem;
+  margin: 20px;
+}
+.letters {
+  max-width: 28.75rem;
+  margin: 20px auto;
+  padding: 10px;
+  background: #222;
+  border-radius: 16px;
+}
+
+button {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #555;
+  transform: scale(1.1);
+}
+
+button:disabled {
+  background: #222;
+  color: #222;
+  cursor: not-allowed;
+}
+
+
+.nourriture {
+  position: absolute;
+  z-index: 10;
+  width: 19rem;
+  right: 2%;
+  top: 53%;
+}
+.cassoulet {
+  position: absolute;
+  z-index: 10;
+  width: 19rem;
+  right: 75%;
+  top: 53%;
+}
+.fondue {
+  position: absolute;
+  z-index: 10;
+  width: 15rem;
+  right: 2%;
+  top: 7%;
+}
+.ramen {
+  position: absolute;
+  z-index: 10;
+  width: 19rem;
+  right: 75%;
+  top: 7%;
+}
+
+@media (max-width: 1024px) {
+  .nourriture, .cassoulet{
+    display: none;
+}
+.ramen, .fondue {
+  width: 10rem;
+  z-index: -1;
+}
+}
+@media (max-width: 768px) {
+  .ramen ,.fondue {
+    display: none;
+  }
+  
+}
