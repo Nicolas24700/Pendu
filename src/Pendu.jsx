@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {Letters} from './letters';
-import {Word} from './Word';
+import {Word} from './word';
 
 export const Pendu = () => {
     // État local pour le mot sélectionné, les lettres devinées et les mauvaises lettres
@@ -20,7 +20,6 @@ export const Pendu = () => {
                 body: new URLSearchParams({ locale: 'fr-FR' })
             });
             const data = await response.json();
-            console.log('Mot aléatoire récupéré :', data.word);
             setSelectedWord(data.word);
     };
 
