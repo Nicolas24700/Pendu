@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {Letters} from './letters';
 import {Word} from './word';
+import mots from './mots.json';
 
 export const Pendu = () => {
     // État local pour le mot sélectionné, les lettres devinées et les mauvaises lettres
@@ -10,18 +11,23 @@ export const Pendu = () => {
     const maxIncorrectGuesses = 6;
 
     // Fonction pour récupérer un mot aléatoire depuis une API
-    const fetchRandomWord = async () => {
-            const response = await fetch('http://localhost:3333/', {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                 // permet de prendre les données françaises
-                body: new URLSearchParams({ locale: 'fr-FR' })
-            });
-            const data = await response.json();
-            setSelectedWord(data.word);
+    // const fetchRandomWord = async () => {
+    //         const response = await fetch('http://localhost:3333/', {
+    //             method: 'POST',
+    //             headers: {
+    //             'Content-Type': 'application/x-www-form-urlencoded'
+    //             },
+    //              // permet de prendre les données françaises
+    //             body: new URLSearchParams({ locale: 'fr-FR' })
+    //         });
+    //         const data = await response.json();
+    //         setSelectedWord(data.word);
+    // };
+    const fetchRandomWord = () => {
+        const randomIndex = Math.floor(Math.random() * mots.length);
+        setSelectedWord(mots[randomIndex]);
     };
+
 
     // Fonction pour démarrer un nouveau jeu en réinitialisant les state
     const StartGame = () => {
